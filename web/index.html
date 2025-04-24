@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="$FLUTTER_BASE_HREF">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Desbloqueio de REP">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="desbloqueio_rep">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>Desbloqueio REP</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<script type='module'>
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+      apiKey: "AIzaSyBaAy9eXeDlVXrqudMHXmK_SoSrIPmCq9c",
+      authDomain: "desbloqueio-rep.firebaseapp.com",
+      projectId: "desbloqueio-rep",
+      storageBucket: "desbloqueio-rep.firebasestorage.app",
+      messagingSenderId: "455413958937",
+      appId: "1:455413958937:web:c7398d4b1eae50fbd01d88",
+      measurementId: "G-DNSMQDJH7R"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  window.addEventListener('load', function(ev) {
+    if (typeof _flutter !== 'undefined' && _flutter.loader) {
+      _flutter.loader.load({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    } else {
+      console.error('Flutter loader is not available.');
+    }
+  });
+</script>
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
